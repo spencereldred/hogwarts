@@ -1,0 +1,7 @@
+<h1>Make a new Student!<h1>
+<% @house = House.all.shuffle.pop %>
+<%= form_for @student do |f| %>
+  <%= f.label "Name: " %><%= f.text_field :name, placeholder: "name" %>
+  <%= f.hidden_field :house_id, value: @house.id %>
+  <%= f.submit "Add Student!" %>
+<% end %>

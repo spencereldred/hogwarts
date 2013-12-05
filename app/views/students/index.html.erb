@@ -1,0 +1,6 @@
+<h1>Here are the students</h2>
+  <a href="/"> <button>Home</button></a></br>
+  <a href="/students/new"> <button>Add Student</button></a>
+<% @students.each do |student| %>
+<li><a href='/houses/<%=student.house_id%>'><%= student.name %></a> - <%= @houses[student.house_id-1].name%></li>
+<% end %>

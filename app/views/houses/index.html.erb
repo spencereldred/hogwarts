@@ -1,3 +1,4 @@
-<%= @houses.each do |h| %>
-  <a href="/houses/<%= house.id %>"><%= house.name %></a>
+<% @houses.each do |house| %>
+  <li><a href="/houses/<%= house.id %>"><%= house.name %></a></li>
 <% end %>
+<a href="/"> <button>Home</button></a>

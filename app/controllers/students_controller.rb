@@ -1,13 +1,19 @@
-    class StudentsController < ApplicationController
+class StudentsController < ApplicationController
     def index
-    @students = Students.all
+      @students = Student.all
+      @houses = House.all
     end
+
     def show
-      @sudent = params[:student]
+      @student = Student.find(params[:id])
     end
+
     def new
-      new_student = Student.new(parmas)
-      student = Student.create
-      house << student
-      redirect to 'idnex'
+      @student = Student.new
     end
+
+    def create
+      @student = Student.create(params[:student])
+      redirect_to students_path
+    end
+end
